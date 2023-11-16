@@ -1,0 +1,40 @@
+/********************** ANIMATION *******************/
+/* ROOT */
+:root {
+    --mic-button-anim-color:#ff0000;
+    --mic-button-anim-bg-color: var(--color-white);
+    --margin-bottom: 0.25rem;
+}
+
+/* KEYFRAMES */
+@keyframes active-mic {
+    0% {
+        color:var(--mic-button-anim-color);
+        background-color: var(--color-white);
+        width: 7%;
+        position: absolute;
+        bottom: calc(var(--mic-btn-width) / 2);
+        right: calc(var(--mic-btn-width) / 2);
+        margin-bottom: var(--margin-bottom);
+    }
+
+    50% {
+        color:var(--mic-button-anim-color);
+        background-color: var(--color-white);
+        width: 10%;
+        position: absolute;
+        bottom: calc(var(--mic-btn-width) / 2);
+        right: calc(var(--mic-btn-width) / 2);
+        margin-bottom: var(--margin-bottom);
+    }
+
+    100% {
+        color:var(--mic-button-anim-color);
+        background-color: var(--color-white); 
+        width: 7%;  
+        position: absolute;
+        bottom: calc(var(--mic-btn-width) / 2);
+        right: calc(var(--mic-btn-width) / 2);
+        margin-bottom: var(--margin-bottom);
+    }    
+}

@@ -1,0 +1,129 @@
+body {
+    background: #0c1317;
+}
+
+/***************** COMMON *******************/
+.contact-name {
+    color: #ffffff;
+}
+
+/**************** CONTACTS AREA ******************/
+.contacts-area {
+    background-color: #111b21;
+}
+
+/********* user section *********/
+.user-section {
+    background-color: #202c33;
+}
+
+.user-options .user-section-btn {
+    color: #aebac1;
+}
+
+/********** notification adv ********/
+.notif-adv {
+    background-color: #182229;
+}
+
+.notif-adv-ico {
+    color: #182229;
+}
+
+.notif-adv-content p {
+    color: #ffffff;
+}
+
+.notif-adv-content a {
+    color: #8696a0;
+}
+
+/********* contact search bar *********/
+.contact-src-bar {
+    background-color: #111b21;
+}
+
+.src-bar-input button {
+    color: #85959f;
+}
+
+.src-bar-input {
+    background-color: #202c33;
+    color: #8696a0;
+}
+
+/********* contact section ********/
+.contacts-msg {
+    border-bottom: 1px solid #1a242a;
+}
+
+.contacts-msg:hover {
+    background-color: #2a3942;
+}
+
+.last-msg {
+    color: #8696a0;
+}
+
+.lst-msg-time {
+    color: #808080;
+}
+
+/**************** CHAT SECTION *****************/
+/********* contact-banner ***********/
+.contact-banner {
+    background-color: #202c33;
+}
+
+.lst-access {
+    color: #8696a0;
+}
+
+.chat-contact-opt button {
+    background-color: #202c33;
+    color: #8696a0;
+}
+
+
+/********** text-area ************/
+.text-area {
+    background-image: url(../img/mine-dark-mode.jpg);
+}
+
+/********* message box *********/
+.send-msg .msg-box {
+    background-color: #005c4b;
+}
+
+.received-msg .msg-box {
+    background-color: #233138;
+}
+
+.msg-box .msg-text {
+    color: #ffffff;
+}
+
+.menu-open {
+    background-color: #233138;
+    color: #ffffff;
+}
+
+.info-msg:hover,
+.delete-msg:hover {
+    background-color: #182329;
+}
+
+/********* input message  *******/
+.input-msg {
+    background-color: #202c33;
+}
+
+.input-msg input {
+    background-color: #2a3942;
+    color: #8696a0;
+}
+
+.input-msg button {
+    background-color: #202c33;
+    color: #8696a0;
+}

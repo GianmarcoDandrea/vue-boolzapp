@@ -1,0 +1,216 @@
+/************************** ROOT ************************/
+:root {
+    /* COMMON */
+    --avatar-wd: calc(var(--banner-heigth) - 15px);
+    --banner-heigth: 80px;
+
+    /* palette */
+    --color-1: #808080;
+
+    /* contacts area */
+    --wd-contacts-area: 40%;
+
+    /* user section */
+    --user-section-btn-color: #b1b1b1;
+    --user-section-btn-font-size: 1.5rem;
+
+    /* notification adv */
+    --notif-adv-primary-color: #8edafc;
+    --notif-adv-secondary-color: #ffffff;
+    --notif-dv-pd: 0.4rem 0.7rem;
+    --notif-adv-ico-wd: 60px;
+    --notif-adv-active-link: #5e5e5e;
+
+    /* search bar */
+    --src-bar-pd: 0.5rem;
+    --src-bar-icon-font-size: 1rem;
+    --contact-src-bar-heigth: 45px;
+
+    /* contact-dets */
+    --contact-name-font-size: 1.3rem;
+    --last-msg-font-size: 0.9rem;
+    --right-area-pd: 0.8rem 0.3rem;
+    --hover-effect-color: #f4f5f5;
+
+    /* text area */
+    --text-area-padding: 3vw 6vw 0;
+
+    /* input-msg */
+    --input-msg-heigth: 3.5rem;
+    --input-msg-pd: 0.5rem 2rem;
+
+}
+
+/******************* COMMON **********************/
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom,
+            #009688 0,
+            #009688 20vh,
+            #d9dbd4 20vh,
+            #d9dbd4 100vh);
+
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    width: 80%;
+    height: 90%;
+}
+
+/********************* CONTACTS AREA **********************/
+.contacts-area {
+    width: var(--wd-contacts-area);
+}
+
+/* user section */
+.user-section {
+    background-color: var(--primary-grey);
+    display: flex;
+}
+
+.user-avatar {
+    display: flex;
+    width: var(--avatar-wd);
+}
+
+.user-options {
+    display: flex;
+    width: 30%;
+}
+
+.user-options .user-section-btn {
+    font-size: var(--user-section-btn-font-size);
+    color: var(--user-section-btn-color);
+    background: none;
+}
+
+/* notification adv */
+.notif-adv {
+    display: flex;
+    background-color: var(--notif-adv-primary-color);
+    padding: var(--notif-dv-pd);
+}
+
+.notif-adv-ico {
+    display: flex;
+    width: var(--notif-adv-ico-wd);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--notif-adv-secondary-color);
+    color: var(--notif-adv-primary-color);
+    font-size: var(--user-section-btn-font-size);
+}
+
+.notif-adv-content {
+    width: calc(97% - var(--notif-adv-ico-wd));
+}
+
+.notif-adv-content a {
+    color: var(--notif-adv-active-link);
+}
+
+/* search bar */
+.contact-src-bar {
+    display: flex;
+    width: 100%;
+    padding: var(--src-bar-pd);
+    background-color: var(--primary-grey);
+    height: var(--contact-src-bar-heigth);
+}
+
+.src-bar-input {
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+}
+
+.src-bar-input button,
+.src-bar-input input {
+    background: transparent;
+    border: none;
+    font-size: var(--src-bar-icon-font-size);
+}
+
+.src-bar-input button {
+    padding-right: 1rem;
+}
+
+.src-bar-input input {
+    width: 75%;
+}
+
+/* contact section */
+.contacts {
+    height: calc(95% - var(--avatar-wd) - var(--notif-adv-ico-wd) - var(--contact-src-bar-heigth));
+}
+
+.contacts-msg {
+    display: flex;
+}
+
+.contacts-msg:hover {
+    background-color: var(--hover-effect-color);
+}
+
+.contact-photo {
+    width: var(--avatar-wd)
+}
+
+.contact-dets {
+    display: flex;
+    width: calc(96% - var(--avatar-wd));
+}
+
+.left-area {
+    width: 70%;
+}
+
+.contact-name {
+    font-size: var(--contact-name-font-size);
+    font-weight: 500;
+}
+
+.last-msg {
+    font-size: var(--last-msg-font-size);
+    color: var(--color-1);
+    margin-top: 0.3rem;
+}
+
+.right-area {
+    padding: var(--rigth-area-pd);
+}
+
+.lst-msg-time {
+    color: var(--color-1);
+}
+
+/************************* CHAT AREA *********************/
+.chat-area {
+    width: calc(100% - var(--wd-contacts-area));
+    height: 100%;
+}
+
+/* chat-contact */
+.contact-avatar {
+    width: var(--avatar-wd);
+    padding: 0;
+}
+
+/* text area */
+.text-area {
+    padding: var(--text-area-padding);
+}
+
+/* input msg */
+.input-msg {
+    height: var(--input-msg-heigth);
+    padding: var(--input-msg-pd);
+}
