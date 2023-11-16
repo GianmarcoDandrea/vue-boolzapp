@@ -24,403 +24,234 @@
 
     <!--google font style -->
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <!-- link to vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="app-container flex-display">
-            <!-- CONTACTS AREA -->
-            <div class="contacts-area">
 
-                <!-- USER SECTION -->
-                <div class="user-section space-between align-center wd100">
-
-                    <div class="user-avatar align-center">
-
-                        <div class="user-photo">
-                            <img src="img/avatar_8.jpg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="user-options flex-center space-evenly">
-                        
-                        <button class="user-section-btn no-bdr">
-                            <i class="fa-solid fa-circle-notch"></i>
-                        </button>
-
-                        <button class="user-section-btn no-bdr">
-                            <i class="fa-solid fa-message"></i>
-                        </button>
-
-                        <button class="user-section-btn no-bdr">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-                    </div>
-
-                </div>
-
-                <!-- NOTIFICATION ADV -->
-                <div class="notif-adv wd100 flex-display space-between">
-
-                    <div class="notif-adv-ico flex-center">
-                        <i class="fa-solid fa-bell-slash"></i>
-                    </div>
-
-                    <div class="notif-adv-content flex-display justify-center flex-column">
-                        <p>Ricevi le notifiche di nuovi messaggi</p>
-                        <a href="">Attiva notifiche desktop</a>
-
-                    </div>
-
-                </div>
-
-                <!-- CONTATCT SEARCH BAR -->
-                <div class="contact-src-bar align-center">
-                    <div class="src-bar-input">
-
-                        <button type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-
-                        <input type="search" class="input" placeholder="Cerca o inizia una nuova chat" maxlength="">
-
-                    </div>
-                </div>
-
-                <!-- CONTACTS SECTION -->
-                <div class="contacts ovfl-y">
-
-                    <div class="contacts-msg space-between">
-
-                        <div class="contact-photo">
-                            <img src="img/avatar_1.jpg" alt="">
-                        </div>
-
-                        <div class="contact-dets space-between">
-
-                            <div class="left-area flex-display flex-column justify-center">
-
-                                <p class="contact-name">Michele</p>
-
-                                <p class="last-msg">
-                                    Lorem, ipsum dolor sit amet.
-                                </p>
-                            </div>
-
-                            <div class="right-area">
-                                <p class="lst-msg-time">16:15</p>
+    <div id="app">
+        <div class="wrapper">
+            <div class="app-container flex-display">
+                <!-- CONTACTS AREA -->
+                <div class="contacts-area">
+    
+                    <!-- USER SECTION -->
+                    <div class="user-section space-between align-center wd100">
+    
+                        <div class="user-avatar align-center">
+    
+                            <div class="user-photo">
+                                <img src="img/avatar_8.jpg" alt="">
                             </div>
                         </div>
-                    </div>
-
-                    <div class="contacts-msg space-between">
-
-                        <div class="contact-photo">
-                            <img src="img/avatar_2.jpg" alt="">
-                        </div>
-
-                        <div class="contact-dets space-between">
-
-                            <div class="left-area flex-display flex-column justify-center">
-
-                                <p class="contact-name">Fabio</p>
-
-                                <p class="last-msg">
-                                    Lorem, ipsum dolor sit amet.
-                                </p>
-                            </div>
-
-                            <div class="right-area">
-                                <p class="lst-msg-time">16:05</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contacts-msg space-between">
-
-                        <div class="contact-photo">
-                            <img src="img/avatar_3.jpg" alt="">
-                        </div>
-
-                        <div class="contact-dets space-between">
-
-                            <div class="left-area flex-display flex-column justify-center">
-
-                                <p class="contact-name">Samuele</p>
-
-                                <p class="last-msg">
-                                    Lorem, ipsum dolor sit amet.
-                                </p>
-                            </div>
-
-                            <div class="right-area">
-                                <p class="lst-msg-time">16:03</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contacts-msg space-between">
-
-                        <div class="contact-photo">
-                            <img src="img/avatar_4.jpg" alt="">
-                        </div>
-
-                        <div class="contact-dets space-between">
-
-                            <div class="left-area flex-display flex-column justify-center">
-
-                                <p class="contact-name">Alessandro B.</p>
-
-                                <p class="last-msg">
-                                    Lorem, ipsum dolor sit amet.
-                                </p>
-                            </div>
-
-                            <div class="right-area">
-                                <p class="lst-msg-time">15:50</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contacts-msg space-between">
-
-                        <div class="contact-photo">
-                            <img src="img/avatar_5.jpg" alt="">
-                        </div>
-
-                        <div class="contact-dets space-between">
-
-                            <div class="left-area flex-display flex-column justify-center">
-
-                                <p class="contact-name">Alessandro L.</p>
-
-                                <p class="last-msg">
-                                    Lorem, ipsum dolor sit amet.
-                                </p>
-                            </div>
-
-                            <div class="right-area">
-                                <p class="lst-msg-time">15:45</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contacts-msg space-between">
-
-                        <div class="contact-photo">
-                            <img src="img/avatar_6.jpg" alt="">
-                        </div>
-
-                        <div class="contact-dets space-between">
-
-                            <div class="left-area flex-display flex-column justify-center">
-
-                                <p class="contact-name">Claudia</p>
-
-                                <p class="last-msg">
-                                    Lorem, ipsum dolor sit amet.
-                                </p>
-                            </div>
-
-                            <div class="right-area">
-                                <p class="lst-msg-time">15:40</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contacts-msg space-between">
-
-                        <div class="contact-photo">
-                            <img src="img/avatar_7.jpg" alt="">
-                        </div>
-
-                        <div class="contact-dets space-between">
-
-                            <div class="left-area flex-display flex-column justify-center">
-
-                                <p class="contact-name">Federico</p>
-
-                                <p class="last-msg">
-                                    Lorem, ipsum dolor sit amet.
-                                </p>
-                            </div>
-
-                            <div class="right-area">
-                                <p class="lst-msg-time">15:22</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contacts-msg space-between">
-
-                        <div class="contact-photo">
-                            <img src="img/avatar_io.jpg" alt="">
-                        </div>
-
-                        <div class="contact-dets space-between">
-
-                            <div class="left-area flex-display flex-column justify-center">
-
-                                <p class="contact-name">Francesca</p>
-
-                                <p class="last-msg">
-                                    Lorem, ipsum dolor sit amet.
-                                </p>
-                            </div>
-
-                            <div class="right-area">
-                                <p class="lst-msg-time">15:03</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contacts-msg space-between">
-
-                        <div class="contact-photo">
-                            <img src="img/avatar_4.jpg" alt="">
-                        </div>
-
-                        <div class="contact-dets space-between">
-
-                            <div class="left-area flex-display flex-column justify-center">
-
-                                <p class="contact-name">Matteo</p>
-
-                                <p class="last-msg">
-                                    Lorem, ipsum dolor sit amet.
-                                </p>
-                            </div>
-
-                            <div class="right-area">
-                                <p class="lst-msg-time">14:55</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- CHAT AREA -->
-            <div class="chat-area wd100 flex-display flex-wrap flex-column   space-between ">
-                <!-- CONTACT BANNER -->
-                <div class="contact-banner flex-display space-evenly">
-                    <div class="contact-avatar flex-display flex-center">
-
-                        <div class="contact-photo">
-                            <img src="img/avatar_1.jpg" alt="">
-                        </div>
-
-                    </div>
-
-                    <div class="chat-contact flex-display flex-center space-between">
-
-                        <div class="chat-contact-info">
-                            <p class="contact-name">
-                                Michele
-                            </p>
-
-                            <p class="lst-access">
-                                Ultimo accesso oggi alle <span class="lst-access-time">16:16</span>
-                            </p>
-                        </div>
-
-                        <div class="chat-contact-opt flex-center space-evenly">
-
-                            <button class="no-bdr">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+    
+                        <div class="user-options flex-center space-evenly">
+                            
+                            <button class="user-section-btn no-bdr">
+                                <i class="fa-solid fa-circle-notch"></i>
                             </button>
-
-                            <button class="no-bdr">
-                                <i class="fa-solid fa-paperclip"></i>
+    
+                            <button class="user-section-btn no-bdr">
+                                <i class="fa-solid fa-message"></i>
                             </button>
-
-                            <button class="no-bdr">
+    
+                            <button class="user-section-btn no-bdr">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </button>
-
+                        </div>
+    
+                    </div>
+    
+                    <!-- NOTIFICATION ADV -->
+                    <div class="notif-adv wd100 flex-display space-between">
+    
+                        <div class="notif-adv-ico flex-center">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+    
+                        <div class="notif-adv-content flex-display justify-center flex-column">
+                            <p>Ricevi le notifiche di nuovi messaggi</p>
+                            <a href="">Attiva notifiche desktop</a>
+    
+                        </div>
+    
+                    </div>
+    
+                    <!-- CONTATCT SEARCH BAR -->
+                    <div class="contact-src-bar align-center">
+                        <div class="src-bar-input">
+    
+                            <button type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+    
+                            <input type="text" class="input" placeholder="Cerca o inizia una nuova chat" maxlength="">
+    
                         </div>
                     </div>
+    
+                    <!-- CONTACTS SECTION -->
+                    <div class="contacts ovfl-y">
+    
+                        <div v-for="(contact, i) in contacts" :key="i" class="contacts-msg space-between" >
+    
+                            <div class="contact-photo">
+                                <img :src="contact.avatar"  alt="">
+                            </div>
+    
+                            <div class="contact-dets space-between">
+    
+                                <div class="left-area flex-display flex-column justify-center">
+    
+                                    <p class="contact-name">
+                                        {{ contact.name }}
+                                    </p>
+    
+                                    <p class="last-msg">
+                                        Ultimo messaggio ricevuto
+                                    </p>
 
-                </div>
-
-                <!-- TEXT AREA -->
-                
-                <div class="text-area flex-display flex-column ovfl-y">
-                    <div class="send-msg flex-display row-reverse">
-                        <div class="msg-box">
-                            <div class="msg-area flex-display">
-                                <div class="msg-text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quis aliquid natus
-                                        eum dicta repudiandae voluptatum dolorum nulla animi, aperiam provident officia
-                                        praesentium reiciendis sit alias fugiat mollitia similique perspiciatis.
                                 </div>
-                                <details class="pos-rel">
-                                    <summary>
-                                        <i class="fa-solid fa-angle-down"></i>
-                                    </summary>
     
-                                    <div class="menu-open pos-abs flex-display flex-column flex-center">
-                                        <div class="info-msg">Info messaggio</div>
-                                        <div class="delete-msg">Cancella messaggio</div>
-                                    </div>
-                                </details>
-                            </div>
-    
-                            <div class="msg-time">
-                                <span>16:13</span>
+                                <div class="right-area">
+                                    <p class="lst-msg-time">16:15</p>
+                                </div>
                             </div>
                         </div>
+
                     </div>
     
-                    <div class="received-msg flex-display">
+                </div>
+    
+                <!-- CHAT AREA -->
+                <div class="chat-area wd100 flex-display flex-wrap flex-column   space-between ">
+                    <!-- CONTACT BANNER -->
+                    <div class="contact-banner flex-display space-evenly">
+                        <div class="contact-avatar flex-display flex-center">
+    
+                            <div class="contact-photo">
+                                <img src="img/avatar_1.jpg" alt="">
+                            </div>
+    
+                        </div>
+    
+                        <div class="chat-contact flex-display flex-center space-between">
+    
+                            <div class="chat-contact-info">
+                                <p class="contact-name">
+                                    Michele
+                                </p>
+    
+                                <p class="lst-access">
+                                    Ultimo accesso oggi alle <span class="lst-access-time">16:16</span>
+                                </p>
+                            </div>
+    
+                            <div class="chat-contact-opt flex-center space-evenly">
+    
+                                <button class="no-bdr">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+    
+                                <button class="no-bdr">
+                                    <i class="fa-solid fa-paperclip"></i>
+                                </button>
+    
+                                <button class="no-bdr">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+    
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                    <!-- TEXT AREA -->
+                    
+                    <div class="text-area flex-display flex-column ovfl-y">
+                        <div class="send-msg flex-display row-reverse">
                             <div class="msg-box">
                                 <div class="msg-area flex-display">
                                     <div class="msg-text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quis aliquid natus
-                                        eum dicta repudiandae voluptatum dolorum nulla animi, aperiam provident officia
-                                        praesentium reiciendis sit alias fugiat mollitia similique perspiciatis.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quis aliquid natus
+                                            eum dicta repudiandae voluptatum dolorum nulla animi, aperiam provident officia
+                                            praesentium reiciendis sit alias fugiat mollitia similique perspiciatis.
                                     </div>
                                     <details class="pos-rel">
                                         <summary>
                                             <i class="fa-solid fa-angle-down"></i>
                                         </summary>
-    
+        
                                         <div class="menu-open pos-abs flex-display flex-column flex-center">
                                             <div class="info-msg">Info messaggio</div>
                                             <div class="delete-msg">Cancella messaggio</div>
                                         </div>
                                     </details>
                                 </div>
-    
+        
                                 <div class="msg-time">
-                                    <span>16:15</span>
+                                    <span>16:13</span>
                                 </div>
                             </div>
+                        </div>
+        
+                        <div class="received-msg flex-display">
+                                <div class="msg-box">
+                                    <div class="msg-area flex-display">
+                                        <div class="msg-text">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quis aliquid natus
+                                            eum dicta repudiandae voluptatum dolorum nulla animi, aperiam provident officia
+                                            praesentium reiciendis sit alias fugiat mollitia similique perspiciatis.
+                                        </div>
+                                        <details class="pos-rel">
+                                            <summary>
+                                                <i class="fa-solid fa-angle-down"></i>
+                                            </summary>
+        
+                                            <div class="menu-open pos-abs flex-display flex-column flex-center">
+                                                <div class="info-msg">Info messaggio</div>
+                                                <div class="delete-msg">Cancella messaggio</div>
+                                            </div>
+                                        </details>
+                                    </div>
+        
+                                    <div class="msg-time">
+                                        <span>16:15</span>
+                                    </div>
+                                </div>
+                        </div>
                     </div>
+                    
+    
+                    <!-- INPUT MESSAGE -->
+                    <div class="input-msg flex-display flex-start pos-rel">
+    
+                        <button class="emoji-button no-bdr flex-center">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </button>
+    
+                        <input type="text" class="no-bdr" placeholder="Scrivi un messaggio">
+    
+                        <button class="mic-button no-bdr flex-center">
+                            <i class="fa-solid fa-microphone"></i>
+                        </button>
+    
+    
+                    </div>
+    
                 </div>
-                
-
-                <!-- INPUT MESSAGE -->
-                <div class="input-msg flex-display flex-start pos-rel">
-
-                    <button class="emoji-button no-bdr flex-center">
-                        <i class="fa-regular fa-face-smile"></i>
-                    </button>
-
-                    <input type="text" class="no-bdr" placeholder="Scrivi un messaggio">
-
-                    <button class="mic-button no-bdr flex-center">
-                        <i class="fa-solid fa-microphone"></i>
-                    </button>
-
-
-                </div>
-
+    
             </div>
-
         </div>
+
     </div>
+
+
+    <!-- link to js -->
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
