@@ -13,9 +13,7 @@ const { createApp } = Vue
     },
 
     methods: {
-      showChat() {
-        
-      }
+
     }
 
 

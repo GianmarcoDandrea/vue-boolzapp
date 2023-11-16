@@ -35,7 +35,7 @@ input:focus-visible {
     --lst-access-font-size: 0.9rem;
 
     /* text area */
-    --text-area-padding: 7vw 5vw 0;
+    --text-area-padding: 5vw 4vw 0;
     --msg-box-gap: 15px;
     --msg-box-pd: 0.6rem;
     --send-msg-box-color:#d5f9ba;
@@ -204,13 +204,15 @@ body {
     list-style: none;
 }
 
-.send-msg .msg-box {
+.send-msg-box {
     background-color: var(--send-msg-box-color);
     width: fit-content;
+    align-self: flex-end;
 }
 
-.received-msg .msg-box {
+.received-msg-box {
     background-color: var(--received-msg-box-color);
+    width: fit-content;
 }
 
 .fa-angle-down {

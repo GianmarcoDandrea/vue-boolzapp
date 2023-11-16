@@ -170,33 +170,39 @@
     
                     <!-- TEXT AREA -->
                     
-                    <div v-for="(contact, i) in contacts" :key="i" 
-                    class="text-area flex-display flex-column ovfl-y">
-                    
-                        <div v-for="message in messages" :key="j" class=" flex-display row-reverse" 
-                        :class="(message.status === 'sent' ? 'send-msg' : 'received-msg' )">
-                            <div class="msg-box">
+                    <div class="text-area flex-display flex-column ovfl-y">
+
+                        <div class="flex-display flex-column">
+
+                            <div v-for="text, in messages" class="msg-box" :class="text.status === 'sent' ? 'send-msg-box' : 'received-msg-box'">
+
                                 <div class="msg-area flex-display">
+
                                     <div class="msg-text">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quis aliquid natus
-                                            eum dicta repudiandae voluptatum dolorum nulla animi, aperiam provident officia
-                                            praesentium reiciendis sit alias fugiat mollitia similique perspiciatis.
+                                        {{ text.message }}
                                     </div>
+
                                     <details class="pos-rel">
+
                                         <summary>
                                             <i class="fa-solid fa-angle-down"></i>
                                         </summary>
         
                                         <div class="menu-open pos-abs flex-display flex-column flex-center">
+
                                             <div class="info-msg">Info messaggio</div>
                                             <div class="delete-msg">Cancella messaggio</div>
+
                                         </div>
+
                                     </details>
+
+                                    <div class="msg-time">
+                                        <span>16:13</span>
+                                    </div>
+
                                 </div>
         
-                                <div class="msg-time">
-                                    <span>16:13</span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -227,7 +233,9 @@
 
 
     <!-- link to js -->
+
     <script src="js/data.js"></script>
+
     <script src="js/script.js"></script>
 </body>
 
