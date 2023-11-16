@@ -7,17 +7,15 @@ const { createApp } = Vue
 
         contacts: listContacts,
         
-        path: null
+        activeIndex : 0,
 
       }
     },
 
     methods: {
-        searchImg(i , j) {
-            path: listContacts[i].message[j].date
-
-    
-        }
+      showChat() {
+        
+      }
     }
 
 

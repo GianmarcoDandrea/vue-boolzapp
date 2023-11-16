@@ -79,7 +79,7 @@
     
                     </div>
     
-                    <!-- CONTATCT SEARCH BAR -->
+                    <!-- CONTACT SEARCH BAR -->
                     <div class="contact-src-bar align-center">
                         <div class="src-bar-input">
     
@@ -132,7 +132,7 @@
                         <div class="contact-avatar flex-display flex-center">
     
                             <div class="contact-photo">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="contacts[activeIndex].avatar" alt="">
                             </div>
     
                         </div>
@@ -141,7 +141,7 @@
     
                             <div class="chat-contact-info">
                                 <p class="contact-name">
-                                    Michele
+                                    {{contacts[activeIndex].name}}
                                 </p>
     
                                 <p class="lst-access">
@@ -170,8 +170,11 @@
     
                     <!-- TEXT AREA -->
                     
-                    <div class="text-area flex-display flex-column ovfl-y">
-                        <div class="send-msg flex-display row-reverse">
+                    <div v-for="(contact, i) in contacts" :key="i" 
+                    class="text-area flex-display flex-column ovfl-y">
+                    
+                        <div v-for="message in messages" :key="j" class=" flex-display row-reverse" 
+                        :class="(message.status === 'sent' ? 'send-msg' : 'received-msg' )">
                             <div class="msg-box">
                                 <div class="msg-area flex-display">
                                     <div class="msg-text">
@@ -195,32 +198,6 @@
                                     <span>16:13</span>
                                 </div>
                             </div>
-                        </div>
-        
-                        <div class="received-msg flex-display">
-                                <div class="msg-box">
-                                    <div class="msg-area flex-display">
-                                        <div class="msg-text">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quis aliquid natus
-                                            eum dicta repudiandae voluptatum dolorum nulla animi, aperiam provident officia
-                                            praesentium reiciendis sit alias fugiat mollitia similique perspiciatis.
-                                        </div>
-                                        <details class="pos-rel">
-                                            <summary>
-                                                <i class="fa-solid fa-angle-down"></i>
-                                            </summary>
-        
-                                            <div class="menu-open pos-abs flex-display flex-column flex-center">
-                                                <div class="info-msg">Info messaggio</div>
-                                                <div class="delete-msg">Cancella messaggio</div>
-                                            </div>
-                                        </details>
-                                    </div>
-        
-                                    <div class="msg-time">
-                                        <span>16:15</span>
-                                    </div>
-                                </div>
                         </div>
                     </div>
                     
