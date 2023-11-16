@@ -174,7 +174,7 @@
 
                         <div class="flex-display flex-column">
 
-                            <div v-for="text, in messages" class="msg-box" :class="text.status === 'sent' ? 'send-msg-box' : 'received-msg-box'">
+                            <div v-for="text in messages" class="msg-box" :class="text.status === 'sent' ? 'send-msg-box' : 'received-msg-box'">
 
                                 <div class="msg-area flex-display">
 
