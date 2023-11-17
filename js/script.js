@@ -52,11 +52,17 @@ const dt = luxon.DateTime
         this.contacts[this.activeIndex].messages.push(newAnswer);
       },
 
-      searchContacts(){
-
+      searchContact(){
+            
       },
-        
-    }
 
+      deleteMessage(index) {
+
+        this.contacts[this.activeIndex].messages.splice(index,1);
+
+    },
+
+
+    }  
 
   }).mount('#app')

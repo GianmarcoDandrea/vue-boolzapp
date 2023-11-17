@@ -88,7 +88,8 @@
                             </button>
     
                             <input type="text" class="input" placeholder="Cerca o inizia una nuova chat" maxlength=""
-                            v-model="search" @keydown.enter="searchContacts">
+                            v-model="searchInputText"
+                            @keyup="searchMessages()">
     
                         </div>
                     </div>
@@ -98,7 +99,8 @@
     
                         <div v-for="(contact, i) in contacts" 
                         class="contacts-msg space-between" 
-                        @click="changeActiveIndex(i)">
+                        @click="changeActiveIndex(i)"
+                        >
     
                             <div class="contact-photo">
                                 <img :src="contact.avatar"  alt="">
@@ -112,15 +114,17 @@
                                         {{ contact.name }}
                                     </p>
     
-                                    <p class="last-msg">
+                                    <p class="last-msg"
+                                    v-if="contact.messages.length - 1 >= 0">
                                         {{contact.messages[contact.messages.length - 1].message}}
                                     </p>
 
                                 </div>
     
                                 <div class="right-area">
-                                    <p class="lst-msg-time">
-
+                                    <p class="lst-msg-time" 
+                                    v-if="contact.messages.length - 1 >= 0">
+                                    {{changeDate(contact.messages[contact.messages.length - 1].date)}}
                                     </p>
                                 </div>
                             </div>
@@ -149,8 +153,17 @@
                                     {{contacts[activeIndex].name}}
                                 </p>
     
-                                <p class="lst-access">
-                                    Ultimo accesso oggi alle <span class="lst-access-time">16:16</span>
+                                <p class="lst-access"
+                                v-if="contacts[activeIndex].messages.length - 1 >= 0">
+                                    Ultimo accesso oggi alle 
+                                    <span class="lst-access-time"
+                                    v-if="contacts[activeIndex].messages.length - 1 >= 0">
+                                        {{changeDate(contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date)}}
+                                    </span>
+
+                                    
+                            
+
                                 </p>
                             </div>
     
@@ -180,6 +193,7 @@
                         <div class="flex-display flex-column">
 
                             <div v-for="(text , i) in contacts[activeIndex].messages" 
+                            :key="i"
                             class="msg-box" 
                             :class="text.status === 'sent' ? 'send' : 'received'">
 
@@ -190,21 +204,15 @@
                                     
                                     <div class=" chat-dx flex-display flex-column
                                      align-end space-between">
-                                        <details class="pos-rel">
-    
-                                            <summary>
-                                                <i class="fa-solid fa-angle-down"></i>
-                                            </summary>
-            
-                                            <div class="menu-open pos-abs flex-display flex-column flex-center">
-    
-                                                <div class="info-msg">Info messaggio</div>
-                                                <div class="delete-msg">Cancella messaggio</div>
-    
+
+                                        <div class="message-options">
+                                            <i class="fa fa-chevron-down"></i>
+                                            <div class="message-options-panel">
+                                                <div class="message-info">Info messaggio</div>
+                                                <div class="message-destroy" @click="deleteMessage(i)">Cancella messaggio</div>
                                             </div>
-    
-                                        </details>
-    
+                                        </div>
+                                    
                                         <div class="msg-time ">
                                             {{changeDate(text.date)}}
                                         </div>
