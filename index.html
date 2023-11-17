@@ -87,7 +87,8 @@
                                 <i class="fa fa-search"></i>
                             </button>
     
-                            <input type="text" class="input" placeholder="Cerca o inizia una nuova chat" maxlength="">
+                            <input type="text" class="input" placeholder="Cerca o inizia una nuova chat" maxlength=""
+                            v-model="search" @keydown.enter="searchContacts">
     
                         </div>
                     </div>
@@ -112,13 +113,15 @@
                                     </p>
     
                                     <p class="last-msg">
-                                        Ultimo messaggio ricevuto
+                                        {{contact.messages[contact.messages.length - 1].message}}
                                     </p>
 
                                 </div>
     
                                 <div class="right-area">
-                                    <p class="lst-msg-time">16:15</p>
+                                    <p class="lst-msg-time">
+
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -222,7 +225,9 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </button>
     
-                        <input type="text" class="no-bdr" placeholder="Scrivi un messaggio">
+                        <input type="text" class="no-bdr" placeholder="Scrivi un messaggio"
+                        v-model.trim="textNewMessage" 
+                        @keyup.enter="newMessage">
     
                         <button class="mic-button no-bdr flex-center">
                             <i class="fa-solid fa-microphone"></i>

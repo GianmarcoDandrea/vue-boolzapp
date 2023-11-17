@@ -14,6 +14,7 @@ const dt = luxon.DateTime
     },
 
     methods: {
+      //funzione per cambiare index 
       changeActiveIndex(index) {
         this.activeIndex = index;
       },
@@ -23,6 +24,38 @@ const dt = luxon.DateTime
         return luxonDate.toFormat("HH:mm");
       },
 
+      newMessage(){
+           
+        const now = dt.now().toString();
+   
+        const newMessage = {
+            date: dt.fromISO(now).toFormat('dd/MM/yyyy HH:mm:ss'),
+            message: this.textNewMessage,
+            status: 'sent'
+        }
+
+        this.textNewMessage = '';
+
+        this.contacts[this.activeIndex].messages.push(newMessage);
+        setTimeout(this.receiveAnswer, 1000);
+      },
+
+      receiveAnswer(){
+        const now = dt.now().toString();
+    
+        const newAnswer = {
+            date: dt.fromISO(now).toFormat('dd/MM/yyyy HH:mm:ss'),
+            message: 'Ok!',
+            status: 'received'
+        }
+
+        this.contacts[this.activeIndex].messages.push(newAnswer);
+      },
+
+      searchContacts(){
+
+      },
+        
     }
 
 
