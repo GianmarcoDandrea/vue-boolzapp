@@ -95,7 +95,9 @@
                     <!-- CONTACTS SECTION -->
                     <div class="contacts ovfl-y">
     
-                        <div v-for="(contact, i) in contacts" :key="i" class="contacts-msg space-between" >
+                        <div v-for="(contact, i) in contacts" 
+                        class="contacts-msg space-between" 
+                        @click="changeActiveIndex(i)">
     
                             <div class="contact-photo">
                                 <img :src="contact.avatar"  alt="">
@@ -174,31 +176,36 @@
 
                         <div class="flex-display flex-column">
 
-                            <div v-for="text in messages" class="msg-box" :class="text.status === 'sent' ? 'send-msg-box' : 'received-msg-box'">
+                            <div v-for="(text , i) in contacts[activeIndex].messages" 
+                            class="msg-box" 
+                            :class="text.status === 'sent' ? 'send' : 'received'">
 
                                 <div class="msg-area flex-display">
-
                                     <div class="msg-text">
                                         {{ text.message }}
                                     </div>
-
-                                    <details class="pos-rel">
-
-                                        <summary>
-                                            <i class="fa-solid fa-angle-down"></i>
-                                        </summary>
-        
-                                        <div class="menu-open pos-abs flex-display flex-column flex-center">
-
-                                            <div class="info-msg">Info messaggio</div>
-                                            <div class="delete-msg">Cancella messaggio</div>
-
+                                    
+                                    <div class=" chat-dx flex-display flex-column
+                                    space-between">
+                                        <details class="pos-rel">
+    
+                                            <summary>
+                                                <i class="fa-solid fa-angle-down"></i>
+                                            </summary>
+            
+                                            <div class="menu-open pos-abs flex-display flex-column flex-center">
+    
+                                                <div class="info-msg">Info messaggio</div>
+                                                <div class="delete-msg">Cancella messaggio</div>
+    
+                                            </div>
+    
+                                        </details>
+    
+                                        <div class="msg-time ">
+                                            {{changeDate(text.date)}}
                                         </div>
 
-                                    </details>
-
-                                    <div class="msg-time">
-                                        <span>16:13</span>
                                     </div>
 
                                 </div>
@@ -234,8 +241,8 @@
 
     <!-- link to js -->
 
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src="js/data.js"></script>
-
     <script src="js/script.js"></script>
 </body>
 
