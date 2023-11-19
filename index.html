@@ -115,7 +115,7 @@
                                     </p>
     
                                     <p class="last-msg"
-                                    v-if="contact.messages.length - 1 >= 0">
+                                    v-show="contact.messages.length - 1 >= 0">
                                         {{substringLastMsg(contact.messages[contact.messages.length - 1].message)}}
                                     </p>
 
@@ -123,7 +123,7 @@
     
                                 <div class="right-area">
                                     <p class="lst-msg-time" 
-                                    v-if="contact.messages.length - 1 >= 0">
+                                    v-show="contact.messages.length - 1 >= 0">
                                     {{changeDate(contact.messages[contact.messages.length - 1].date)}}
                                     </p>
                                 </div>
@@ -157,7 +157,7 @@
                                 v-if="contacts[activeIndex].messages.length - 1 >= 0">
                                     Ultimo accesso oggi alle 
                                     <span class="lst-access-time"
-                                    v-if="contacts[activeIndex].messages.length - 1 >= 0">
+                                    v-show="contacts[activeIndex].messages.length - 1 >= 0" >
                                         {{changeDate(contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date)}}
                                     </span>
 
