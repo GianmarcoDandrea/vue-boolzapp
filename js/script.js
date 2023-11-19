@@ -70,7 +70,20 @@ const dt = luxon.DateTime
 
         this.contacts[this.activeIndex].messages.splice(index,1);
 
-    },
+      },
+
+      substringLastMsg(message){
+
+        let preview;
+        
+        if (message.length > 30) {
+          preview = message.substr(0,30) + '...';
+        } else {
+          preview = message;
+        }
+    
+        return preview;
+    }
 
 
     }  

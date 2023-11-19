@@ -116,7 +116,7 @@
     
                                     <p class="last-msg"
                                     v-if="contact.messages.length - 1 >= 0">
-                                        {{contact.messages[contact.messages.length - 1].message}}
+                                        {{substringLastMsg(contact.messages[contact.messages.length - 1].message)}}
                                     </p>
 
                                 </div>
