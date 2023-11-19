@@ -259,12 +259,13 @@ body {
   
 .fa-chevron-down {
     color: #B6B9BB;
+    height: 30px;
 }
   
 .message-options-panel {
     display: none;
     position: absolute;
-    transform: translateX(-100%);
+    transform: translate(-100%, -35%);
     width: 150px;
     height: 80px;
     background: white;

@@ -89,7 +89,7 @@
     
                             <input type="text" class="input" placeholder="Cerca o inizia una nuova chat" maxlength=""
                             v-model="searchInputText"
-                            @keyup="searchMessages()">
+                            @keyup="searchContact()">
     
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                         <div v-for="(contact, i) in contacts" 
                         class="contacts-msg space-between" 
                         @click="changeActiveIndex(i)"
-                        >
+                        v-show="contact.visible === true">
     
                             <div class="contact-photo">
                                 <img :src="contact.avatar"  alt="">

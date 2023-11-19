@@ -9,6 +9,8 @@ const dt = luxon.DateTime
 
         contacts: listContacts,
         activeIndex : 0,
+        searchInputText: '',
+        textNewMessage: '',
 
       }
     },
@@ -53,7 +55,15 @@ const dt = luxon.DateTime
       },
 
       searchContact(){
-            
+            console.log("ricerca" , this.searchInputText);
+            let search = this.searchInputText.toLowerCase();
+            this.contacts.forEach(element => {
+              if (element.name.toLowerCase().includes(search)) {
+                element.visible = true;
+              } else {
+                element.visible = false;
+              }
+            });
       },
 
       deleteMessage(index) {
