@@ -91,19 +91,20 @@ body {
 }
 
 /********* message box *********/
-.send-msg .msg-box {
+.send  {
     background-color: #005c4b;
 }
 
-.received-msg .msg-box {
+.received {
     background-color: #233138;
 }
 
-.msg-box .msg-text {
+.msg-box {
     color: #ffffff;
 }
 
-.menu-open {
+.message-options-panel,
+.message-options-panel>div:hover {
     background-color: #233138;
     color: #ffffff;
 }
