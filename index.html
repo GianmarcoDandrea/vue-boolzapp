@@ -36,172 +36,165 @@
             <div class="app-container flex-display">
                 <!-- CONTACTS AREA -->
                 <div class="contacts-area">
-    
+
                     <!-- USER SECTION -->
                     <div class="user-section space-between align-center wd100">
-    
+
                         <div class="user-avatar align-center">
-    
+
                             <div class="user-photo">
                                 <img src="img/avatar_8.jpg" alt="">
                             </div>
                         </div>
-    
+
                         <div class="user-options flex-center space-evenly">
-                            
+
                             <button class="user-section-btn no-bdr">
                                 <i class="fa-solid fa-circle-notch"></i>
                             </button>
-    
+
                             <button class="user-section-btn no-bdr">
                                 <i class="fa-solid fa-message"></i>
                             </button>
-    
+
                             <button class="user-section-btn no-bdr">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </button>
                         </div>
-    
+
                     </div>
-    
+
                     <!-- NOTIFICATION ADV -->
                     <div class="notif-adv wd100 flex-display space-between">
-    
+
                         <div class="notif-adv-ico flex-center">
                             <i class="fa-solid fa-bell-slash"></i>
                         </div>
-    
+
                         <div class="notif-adv-content flex-display justify-center flex-column">
                             <p>Ricevi le notifiche di nuovi messaggi</p>
                             <a href="">Attiva notifiche desktop</a>
-    
+
                         </div>
-    
+
                     </div>
-    
+
                     <!-- CONTACT SEARCH BAR -->
                     <div class="contact-src-bar align-center">
                         <div class="src-bar-input">
-    
+
                             <button type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
-    
+
                             <input type="text" class="input" placeholder="Cerca o inizia una nuova chat" maxlength=""
-                            v-model="searchInputText"
-                            @keyup="searchContact()">
-    
+                                v-model="searchInputText" @keyup="searchContact()">
+
                         </div>
                     </div>
-    
+
                     <!-- CONTACTS SECTION -->
                     <div class="contacts ovfl-y">
-    
-                        <div v-for="(contact, i) in contacts" 
-                        class="contacts-msg space-between" 
-                        @click="changeActiveIndex(i)"
-                        v-show="contact.visible === true">
-    
+
+                        <div v-for="(contact, i) in contacts" class="contacts-msg space-between"
+                            @click="changeActiveIndex(i)" v-show="contact.visible === true">
+
                             <div class="contact-photo">
-                                <img :src="contact.avatar"  alt="">
+                                <img :src="contact.avatar" alt="">
                             </div>
-    
+
                             <div class="contact-dets space-between">
-    
+
                                 <div class="left-area flex-display flex-column justify-center">
-    
+
                                     <p class="contact-name">
                                         {{ contact.name }}
                                     </p>
-    
-                                    <p class="last-msg"
-                                    v-show="contact.messages.length - 1 >= 0">
+
+                                    <p class="last-msg" v-show="contact.messages.length - 1 >= 0">
                                         {{substringLastMsg(contact.messages[contact.messages.length - 1].message)}}
                                     </p>
 
                                 </div>
-    
+
                                 <div class="right-area">
-                                    <p class="lst-msg-time" 
-                                    v-show="contact.messages.length - 1 >= 0">
-                                    {{changeDate(contact.messages[contact.messages.length - 1].date)}}
+                                    <p class="lst-msg-time" v-show="contact.messages.length - 1 >= 0">
+                                        {{changeDate(contact.messages[contact.messages.length - 1].date)}}
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                     </div>
-    
+
                 </div>
-    
+
                 <!-- CHAT AREA -->
                 <div class="chat-area wd100 flex-display flex-wrap flex-column   space-between ">
                     <!-- CONTACT BANNER -->
                     <div class="contact-banner flex-display space-evenly">
                         <div class="contact-avatar flex-display flex-center">
-    
+
                             <div class="contact-photo">
                                 <img :src="contacts[activeIndex].avatar" alt="">
                             </div>
-    
+
                         </div>
-    
+
                         <div class="chat-contact flex-display flex-center space-between">
-    
+
                             <div class="chat-contact-info">
                                 <p class="contact-name">
                                     {{contacts[activeIndex].name}}
                                 </p>
-    
-                                <p class="lst-access"
-                                v-if="contacts[activeIndex].messages.length - 1 >= 0">
-                                    Ultimo accesso oggi alle 
+
+                                <p class="lst-access" v-if="contacts[activeIndex].messages.length - 1 >= 0">
+                                    Ultimo accesso oggi alle
                                     <span class="lst-access-time"
-                                    v-show="contacts[activeIndex].messages.length - 1 >= 0" >
-                                        {{changeDate(contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date)}}
+                                        v-show="contacts[activeIndex].messages.length - 1 >= 0">
+                                        {{changeDate(contacts[activeIndex].messages[contacts[activeIndex].messages.length
+                                        - 1].date)}}
                                     </span>
 
-                                    
-                            
+
+
 
                                 </p>
                             </div>
-    
+
                             <div class="chat-contact-opt flex-center space-evenly">
-    
+
                                 <button class="no-bdr">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
-    
+
                                 <button class="no-bdr">
                                     <i class="fa-solid fa-paperclip"></i>
                                 </button>
-    
+
                                 <button class="no-bdr">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                 </button>
-    
+
                             </div>
                         </div>
-    
+
                     </div>
-    
+
                     <!-- TEXT AREA -->
-                    
+
                     <div class="text-area flex-display flex-column ovfl-y">
 
                         <div class="flex-display flex-column">
 
-                            <div v-for="(text , i) in contacts[activeIndex].messages" 
-                            :key="i"
-                            class="msg-box" 
-                            :class="text.status === 'sent' ? 'send' : 'received'">
+                            <div v-for="(text , i) in contacts[activeIndex].messages" :key="i" class="msg-box"
+                                :class="text.status === 'sent' ? 'send' : 'received'">
 
                                 <div class="msg-area flex-display space-between">
                                     <div class="msg-text">
                                         {{ text.message }}
                                     </div>
-                                    
+
                                     <div class=" chat-dx flex-display flex-column
                                      align-end space-between">
 
@@ -209,10 +202,11 @@
                                             <i class="fa fa-chevron-down"></i>
                                             <div class="message-options-panel">
                                                 <div class="message-info">Info messaggio</div>
-                                                <div class="message-destroy" @click="deleteMessage(i)">Cancella messaggio</div>
+                                                <div class="message-destroy" @click="deleteMessage(i)">Cancella
+                                                    messaggio</div>
                                             </div>
                                         </div>
-                                    
+
                                         <div class="msg-time ">
                                             {{changeDate(text.date)}}
                                         </div>
@@ -220,41 +214,41 @@
                                     </div>
 
                                 </div>
-        
+
                             </div>
                         </div>
                     </div>
-                    
-    
+
+
                     <!-- INPUT MESSAGE -->
                     <div class="input-msg flex-display flex-start pos-rel">
-    
+
                         <button class="emoji-button no-bdr flex-center">
                             <i class="fa-regular fa-face-smile"></i>
                         </button>
-    
+
                         <input type="text" class="no-bdr" placeholder="Scrivi un messaggio"
-                        v-model.trim="textNewMessage" 
-                        @keyup.enter="newMessage">
-    
+                            v-model.trim="textNewMessage" @keyup.enter="newMessage">
+
                         <button class="mic-button no-bdr flex-center">
                             <i class="fa-solid fa-microphone"></i>
                         </button>
-    
-    
+
+
                     </div>
-    
+
                 </div>
-    
+
             </div>
         </div>
 
     </div>
 
 
-    <!-- link to js -->
-
+    <!-- link to luxon -->
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+
+    <!-- link to js -->
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
 </body>

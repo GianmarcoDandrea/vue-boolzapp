@@ -38,10 +38,10 @@ input:focus-visible {
     --text-area-padding: 5vw 4vw 0;
     --msg-box-gap: 15px;
     --msg-box-pd: 0.6rem;
-    --send-msg-box-color:#d5f9ba;
+    --send-msg-box-color: #d5f9ba;
     --received-msg-box-color: #ffffff;
     --max-width-msg-box: 60%;
-    --msg-box-bdr-rad:10px;
+    --msg-box-bdr-rad: 10px;
     --menu-open-font-size: 0.9rem;
 }
 
@@ -208,7 +208,7 @@ body {
 
 .msg-box summary {
     list-style: none;
-    
+
 }
 
 .send {
@@ -235,7 +235,7 @@ body {
     width: 15%;
 }
 
-.msg-time{
+.msg-time {
     padding: 0.2rem;
     text-align: end;
     font-size: 0.7rem;
@@ -245,23 +245,24 @@ body {
 
 .menu-open {
     width: 150px;
-    font-size: var(--menu-open-font-size) ;
+    font-size: var(--menu-open-font-size);
     transform: translateX(-100%);
     background-color: var(--color-white);
     box-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
 
 }
+
 .message-options {
     cursor: pointer;
     position: relative;
 }
 
-  
+
 .fa-chevron-down {
     color: #B6B9BB;
     height: 30px;
 }
-  
+
 .message-options-panel {
     display: none;
     position: absolute;
@@ -271,22 +272,23 @@ body {
     background: white;
     box-shadow: 0px 0px 40px -15px rgba(0, 0, 0, 0.75);
 }
-  
-.message-options:hover > .message-options-panel {
+
+.message-options:hover>.message-options-panel {
     display: block;
 }
-  
-.message-options-panel > div {
+
+.message-options-panel>div {
     cursor: pointer;
     width: 100%;
     line-height: 40px;
     font-size: 14px;
     text-align: center;
 }
-  
-.message-options-panel > div:hover {
+
+.message-options-panel>div:hover {
     color: #6B7376;
 }
+
 /* input msg */
 .input-msg {
     width: 100%;

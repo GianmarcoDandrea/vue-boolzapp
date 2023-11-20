@@ -2,90 +2,90 @@ const { createApp } = Vue
 
 const dt = luxon.DateTime
 
-  createApp({
-    data() {
-        
-      return {
+createApp({
+  data() {
 
-        contacts: listContacts,
-        activeIndex : 0,
-        searchInputText: '',
-        textNewMessage: '',
+    return {
 
-      }
+      contacts: listContacts,
+      activeIndex: 0,
+      searchInputText: '',
+      textNewMessage: '',
+
+    }
+  },
+
+  methods: {
+    //funzione per cambiare index 
+    changeActiveIndex(index) {
+      this.activeIndex = index;
     },
 
-    methods: {
-      //funzione per cambiare index 
-      changeActiveIndex(index) {
-        this.activeIndex = index;
-      },
+    changeDate(fullDate) {
+      const luxonDate = dt.fromFormat(fullDate, "dd/MM/yyyy HH:mm:ss");
+      return luxonDate.toFormat("HH:mm");
+    },
 
-      changeDate (fullDate) {
-        const luxonDate = dt.fromFormat(fullDate, "dd/MM/yyyy HH:mm:ss");
-        return luxonDate.toFormat("HH:mm");
-      },
+    newMessage() {
 
-      newMessage(){
-           
-        const now = dt.now().toString();
-   
-        const newMessage = {
-            date: dt.fromISO(now).toFormat('dd/MM/yyyy HH:mm:ss'),
-            message: this.textNewMessage,
-            status: 'sent'
-        }
+      const now = dt.now().toString();
 
-        this.textNewMessage = '';
+      const newMessage = {
+        date: dt.fromISO(now).toFormat('dd/MM/yyyy HH:mm:ss'),
+        message: this.textNewMessage,
+        status: 'sent'
+      }
 
-        this.contacts[this.activeIndex].messages.push(newMessage);
-        setTimeout(this.receiveAnswer, 1000);
-      },
+      this.textNewMessage = '';
 
-      receiveAnswer(){
-        const now = dt.now().toString();
-    
-        const newAnswer = {
-            date: dt.fromISO(now).toFormat('dd/MM/yyyy HH:mm:ss'),
-            message: 'Ok!',
-            status: 'received'
-        }
+      this.contacts[this.activeIndex].messages.push(newMessage);
+      setTimeout(this.receiveAnswer, 1000);
+    },
 
-        this.contacts[this.activeIndex].messages.push(newAnswer);
-      },
+    receiveAnswer() {
+      const now = dt.now().toString();
 
-      searchContact(){
-            console.log("ricerca" , this.searchInputText);
-            let search = this.searchInputText.toLowerCase();
-            this.contacts.forEach(element => {
-              if (element.name.toLowerCase().includes(search)) {
-                element.visible = true;
-              } else {
-                element.visible = false;
-              }
-            });
-      },
+      const newAnswer = {
+        date: dt.fromISO(now).toFormat('dd/MM/yyyy HH:mm:ss'),
+        message: 'Ok!',
+        status: 'received'
+      }
 
-      deleteMessage(index) {
+      this.contacts[this.activeIndex].messages.push(newAnswer);
+    },
 
-        this.contacts[this.activeIndex].messages.splice(index,1);
-
-      },
-
-      substringLastMsg(message){
-
-        let preview;
-        
-        if (message.length > 30) {
-          preview = message.substr(0,30) + '...';
+    searchContact() {
+      console.log("ricerca", this.searchInputText);
+      let search = this.searchInputText.toLowerCase();
+      this.contacts.forEach(element => {
+        if (element.name.toLowerCase().includes(search)) {
+          element.visible = true;
         } else {
-          preview = message;
+          element.visible = false;
         }
-    
-        return preview;
+      });
+    },
+
+    deleteMessage(index) {
+
+      this.contacts[this.activeIndex].messages.splice(index, 1);
+
+    },
+
+    substringLastMsg(message) {
+
+      let preview;
+
+      if (message.length > 30) {
+        preview = message.substr(0, 30) + '...';
+      } else {
+        preview = message;
+      }
+
+      return preview;
     }
 
 
-    }  
+  }
 
-  }).mount('#app')
+}).mount('#app')
