@@ -39,19 +39,23 @@ createApp({
       this.textNewMessage = '';
 
       this.contacts[this.activeIndex].messages.push(newMessage);
-      setTimeout(this.receiveAnswer, 1000);
+      this.receiveAnswer(this.activeIndex);
     },
 
     receiveAnswer() {
+      
       const now = dt.now().toString();
-
-      const newAnswer = {
-        date: dt.fromISO(now).toFormat('dd/MM/yyyy HH:mm:ss'),
-        message: 'Ok!',
-        status: 'received'
-      }
-
-      this.contacts[this.activeIndex].messages.push(newAnswer);
+      const replyIndex = this.activeIndex;
+      setTimeout(() => {
+        const newAnswer = {
+          date: dt.fromISO(now).toFormat('dd/MM/yyyy HH:mm:ss'),
+          message: 'Ok!',
+          status: 'received'
+        }
+  
+        this.contacts[replyIndex].messages.push(newAnswer);
+        
+      }, 1000);
     },
 
     searchContact() {
